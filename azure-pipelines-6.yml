@@ -1,0 +1,22 @@
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'restore'
+    projects: '**/*csproj'
+    feedsToUse: 'select'
+    vstsFeed: '3c5fe56d-44b8-4bac-a2d4-473ad39f9879'
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'build'
+    projects: '**/*csproj'
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'test'
+    projects: '**/*csproj'
+
