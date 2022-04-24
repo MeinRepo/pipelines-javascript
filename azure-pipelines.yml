@@ -14,8 +14,12 @@ steps:
   inputs:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
+- task: Npm@1
+  inputs:
+    command: 'install'
+    customRegistry: 'useFeed'
+    customFeed: '18d55622-202a-42d3-98f4-8c9ac4501e83/e4085394-1389-4df9-81c0-fde060927b62'
 
 - script: |
-    npm install
     npm run build
   displayName: 'npm install and build'
