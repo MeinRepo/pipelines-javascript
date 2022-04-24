@@ -17,6 +17,6 @@ steps:
     customRegistry: 'useFeed'
     customFeed: '18d55622-202a-42d3-98f4-8c9ac4501e83/e4085394-1389-4df9-81c0-fde060927b62'
 
-- script: |
+- script:
     npm run build
   displayName: 'npm install and build'
